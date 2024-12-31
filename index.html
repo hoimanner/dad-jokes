@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackclub Themed Dad Joke Generator</title>
+    <style>
+        @font-face {
+            font-family: 'Phantom Sans';
+            src: url('Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Phantom Sans', sans-serif;
+            background: linear-gradient(360deg, #ec3750, #ff8c37);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            animation: backgroundAnimation 5s infinite ease-in-out;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            transition: transform 0.5s ease-in-out;
+            width: 700px;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #338eda;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ec3750, #ff8c37);
+            font-family: 'Phantom Sans', sans-serif;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            transform: translateY(-5px);
+            background-color: #000000;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(2px);
+        }
+
+        .dad-joke {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .dad-joke:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 26px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+
+            .dad-joke {
+                font-size: 18px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hackclub Themed Dad Joke Generator</h1>
+        <button onclick="generateDadJoke()">Get Dad Joke</button>
+        <div class="dad-joke" id="dad-joke">Click the button to get a random dad joke!</div>
+        <footer><span style="color: #a633d6;">made with 🤍 by sarvesh for hackclub.</span></footer>
+    </div>
+
+
+    <script>
+        const dadJokes = [
+        "My boss said “dress for the job you want, not for the job you have.” So I went in as Batman.",
+        "I told my wife she should embrace her mistakes. She gave me a hug.",
+        "I went to the aquarium this weekend, but I didn't stay long. There was something fishy about it.",
+        "He was a big fan of electricity. He conducted himself well.",
+        "Can a frog jump higher than a house? Of course, a house can't jump.",
+        "I was going to try an all almond diet, but that's just nuts.",
+        "I'm reading a book on the history of glue. I just can't seem to put it down.",
+        "I once submitted 10 puns to a joke competition. I really thought with that many, one was sure to be a winner. Sadly, no pun in ten did.",
+        "I'm terrified of elevators, so I'm going to start taking steps to avoid them.",
+        "I used to play piano by ear, but now I use my hands.",
+        "I'm reading a book on anti-gravity. It's impossible to put down!",
+        "I used to be a baker, but I couldn't make enough dough.",
+        "I'm friends with 25 letters of the alphabet. I don't know y.",
+        "Today at the bank, an old lady asked me to check her balance... So I pushed her over.",
+        "Hi, I’m Cliff. Drop over sometime.",
+        "What do you call the security guards for Samsung? Guardians of the galaxy.",
+        "I was making a joke about retirement. It did not work.",
+        "You know, people say they pick their nose, but I feel like I was just born with mine.",
+        "They're making a movie about clocks. It's about time.",
+        "She had a photographic memory but never developed it.",
+        "We have a genetic predisposition for diarrhea. Runs in our jeans.",
+        "The owner of the tuxedo store kept hovering over me when i was browsing, so I asked him to leave me alone. He said, “Fine, suit yourself.”",
+        "Did you hear about the kidnapping at the park? They woke him up.",
+        "Why did the tomato turn red? Because it saw the salad dressing!",
+        "Are you a fan of the band 1023MB? They haven't got a gig yet.",
+        "Spring is here! I got so excited I wet my plants.",
+        "Wild birds are always hungry. They have tweet tooths.",
+        "What did the fish say when he hit the wall? Dam.",
+        "What did the coffee report to the police? A mugging.",
+        "Is this pool safe for diving? It deep ends.",
+        "How do you get a good price on a sled?", "You have toboggan.",
+        ];
+
+        function generateDadJoke() {
+            const randomIndex = Math.floor(Math.random() * dadJokes.length);
+            document.getElementById("dad-joke").textContent = dadJokes[randomIndex];
+        }
+    </script>
+</body>
+</html>
